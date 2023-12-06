@@ -21,6 +21,10 @@ class PostController extends Controller
         return view('pages.createpost');
     }
 
+    public function showTable(){
+        $posts = Post::all();
+        return view('pages.table', compact('posts'));
+    }
     /**
      * Store a newly created resource in storage.
      */
@@ -52,6 +56,7 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Post::destroy($id);
+        return redirect('/table');
     }
 }

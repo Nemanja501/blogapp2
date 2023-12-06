@@ -3,6 +3,7 @@
 use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
+use PHPUnit\Framework\Attributes\PostCondition;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,5 @@ Route::get('/posts/{title}', [PostController::class, 'show']);
 Route::get('/createpost', [PostController::class, 'showCreatePost']);
 Route::post('/createpost', [PostController::class, 'store']);
 Route::post('/createcomment', [CommentsController::class, 'store']);
+Route::get('/table', [PostController::class, 'showTable']);
+Route::get('/deletepost/{id}', [PostController::class, 'destroy']);
