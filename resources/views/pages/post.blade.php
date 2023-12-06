@@ -7,6 +7,10 @@
     <h1>{{ $post->title }} </h1>
     <p>{{ $post->body }}</p>
     <small>{{ $post->category }}</small>
+
+    <br><br><br>
+    @include('components.createcomment')
+    @include('components.comment')
 </div>
 
 @endsection
